@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Calculus Comparison Test for integrals</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus">
+<meta property="book:author" content="Wai Yan Pong">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\ds}{\displaystyle}
+\DeclareMathOperator{\asec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="calbook.html"><span class="title">Calculus:</span> <span class="subtitle">An intuitive approach</span></a></h1>
+<p class="byline">Wai Yan Pong</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "classic",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ipi_def.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ipi.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ipi-ex.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ipi_def.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ipi.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ipi-ex.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="front-colophon.html" data-scroll="front-colophon" class="internal">Colophon</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-I.html" data-scroll="part-I" class="internal"><span class="codenumber">I</span> <span class="title">Calculus I</span></a></li>
+<li class="link part"><a href="part-II.html" data-scroll="part-II" class="internal"><span class="codenumber">II</span> <span class="title">Calculus II</span></a></li>
+<li class="link">
+<a href="tqint.html" data-scroll="tqint" class="internal"><span class="codenumber">1</span> <span class="title">Techniques of Integration</span></a><ul>
+<li><a href="IBP.html" data-scroll="IBP" class="internal">Integration by Parts</a></li>
+<li><a href="trig_int.html" data-scroll="trig_int" class="internal">Trigonometric Integrals</a></li>
+<li><a href="trig_subs.html" data-scroll="trig_subs" class="internal">Trigonometric Substitutions</a></li>
+<li><a href="partial_fractions.html" data-scroll="partial_fractions" class="internal">Integrals of Rational Functions</a></li>
+<li><a href="ex_tqint.html" data-scroll="ex_tqint" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ipi.html" data-scroll="ipi" class="internal"><span class="codenumber">2</span> <span class="title">Improper Integrals</span></a><ul>
+<li><a href="ipi_def.html" data-scroll="ipi_def" class="internal">Definitions and Examples</a></li>
+<li><a href="ipi_comp_test.html" data-scroll="ipi_comp_test" class="active">Comparison Test for integrals</a></li>
+<li><a href="ipi-ex.html" data-scroll="ipi-ex" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="seq_series.html" data-scroll="seq_series" class="internal"><span class="codenumber">3</span> <span class="title">Sequence and Series</span></a><ul>
+<li><a href="sec_sequence.html" data-scroll="sec_sequence" class="internal">Sequences</a></li>
+<li><a href="sec_seq_conv_test.html" data-scroll="sec_seq_conv_test" class="internal">Convergence Tests for Sequences</a></li>
+<li><a href="sec-series.html" data-scroll="sec-series" class="internal">Series</a></li>
+<li><a href="series_conv_test.html" data-scroll="series_conv_test" class="internal">Convergence Tests for Series</a></li>
+<li><a href="power_series.html" data-scroll="power_series" class="internal">Power Series</a></li>
+<li><a href="taylor_series.html" data-scroll="taylor_series" class="internal">Taylor Series</a></li>
+<li><a href="seq_series_ex.html" data-scroll="seq_series_ex" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link"><a href="geoapp.html" data-scroll="geoapp" class="internal"><span class="codenumber">4</span> <span class="title">Geometric Applications</span></a></li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-1.html" data-scroll="appendix-1" class="internal"><span class="codenumber">A</span> <span class="title">Trigonometric Identities</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">B</span> <span class="title">Hints and Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="references-backmatter.html" data-scroll="references-backmatter" class="internal"><span class="title">References</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="back-colophon.html" data-scroll="back-colophon" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="ipi_comp_test"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Comparison Test for integrals</span>
+</h2>
+<p id="p-93">In many occasions the actual value of an improper integral is hard to find. Perhaps, it is because an anti-derivative of the integrand is hard to find. Perhaps, the limit involved is hard to compute. However, sometime all that we care about is whether the improper integral converges or not. If that is the case, it is often much easier to decide the convergence of the integral by comparing it with another simpler improper integral whose convergence is easier to determine.</p>
+<p id="p-94">For simplicity, we assume all functions in the following discussion are integrable on whatever the domain of integration that we talk about.</p>
+<p id="p-95">We begin with an observation: if the graph of <span class="process-math">\(f\)</span> never dips below the <span class="process-math">\(x\)</span>-axis on the interval <span class="process-math">\([a,b]\text{,}\)</span> the area bounded between the graph of <span class="process-math">\(f\)</span> and the <span class="process-math">\(x\)</span>-axis cannot be negative (it can be zero though). Hence,</p>
+<article class="proposition theorem-like" id="ipi-cmp-finite"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
+</h3>Suppose <span class="process-math">\(f(x) \ge 0\)</span> on <span class="process-math">\([a,b]\text{,}\)</span> then <span class="process-math">\(\int_a^b f(x)
+dx \ge 0\text{.}\)</span></article><p id="p-96">Consequently, if <span class="process-math">\(f \le g\)</span> on <span class="process-math">\([a,b]\text{,}\)</span> then <span class="process-math">\(g-f \ge 0\)</span> (which is also integrable) on <span class="process-math">\([a,b]\)</span> and so</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+0 \le \int_a^b g(x)-f(x) dx = \int_a^b g(x)dx - \int_a^b f(x)dx.
+\end{equation*}
+</div>
+<p class="continuation">That is, <span class="process-math">\(\int_a^b f(x)dx \le \int_a^b g(x)dx\text{.}\)</span> Note also that if <span class="process-math">\(f \ge 0\text{,}\)</span> the function <span class="process-math">\(A(t) = \int_a^t f(x)dx\)</span> is an increasing function of <span class="process-math">\(t\text{.}\)</span> Therefore, if <span class="process-math">\(A(t)\)</span> is bounded above on <span class="process-math">\([a,\infty)\text{,}\)</span> then <span class="process-math">\(\int_a^{\infty} f(x)dx = \lim_{t\to
+\infty} \int_a^t f(x)dx\)</span> exists. From this we conclude that</p>
+<article class="proposition theorem-like" id="ipi-cmp-test"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
+</h3>(Comparsion test for improper integrals) Suppose <span class="process-math">\(0 \le f \le g\)</span> on <span class="process-math">\([a,\infty)\text{,}\)</span> then <ul class="disc">
+<li id="li-22"><p id="p-derived-li-22">if <span class="process-math">\(\int_a^\infty g(x)dx\)</span> converges, so does <span class="process-math">\(\int_a^{\infty}
+f(x) dx\text{.}\)</span>  Moreover, <span class="process-math">\(\int_a^{\infty} f(x)dx \le \int_a^\infty
+g(x)dx\text{.}\)</span></p></li>
+<li id="li-23"><p id="p-derived-li-23">if <span class="process-math">\(\int_a^{\infty} f(x)dx\)</span> diverges to <span class="process-math">\(+\infty\text{,}\)</span> then so does <span class="process-math">\(\int_a^\infty g(x)dx\text{.}\)</span></p></li>
+</ul></article><p id="p-97">The same results hold for improper integrals with bounded domain of integration (see <a href="" class="xref" data-knowl="./knowl/ipi-bdd-cmp-test.html" title="Exercise 2.3.1">Exercise 2.3.1</a>).</p>
+<p id="p-98">Let us put the comparison test into action.</p>
+<article class="example example-like" id="ipi-cmp-x-cube-plus-two"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
+</h3>Consider the proper integral <span class="process-math">\(\int_1^{\infty} \frac{1}{x^3 + 2} dx\text{.}\)</span> The indefinite integral <span class="process-math">\(\int \frac{1}{x^3+2}dx\)</span> is elementary but not that easy to find by hand. But it is easy to determine the convergence of the improper integral. Since <span class="process-math">\(0 \lt \frac{1}{x^3+2}
+\lt \frac{1}{x^3}\)</span> on <span class="process-math">\([1,\infty)\text{.}\)</span> Since <span class="process-math">\(\int_1^{\infty}
+\frac{1}{x^3}dx\)</span> converges to <span class="process-math">\(1/2\)</span> by <a href="" class="xref" data-knowl="./knowl/ipi-p-test.html" title="Proposition 2.1.3">Proposition 2.1.3</a>, it follows from <a href="" class="xref" data-knowl="./knowl/ipi-cmp-test.html" title="Proposition 2.2.2">Proposition 2.2.2</a> that<div class="displaymath process-math" data-contains-math-knowls="./knowl/ipi-p-test.html ./knowl/ipi-cmp-test.html">
+\begin{equation*}
+\int_1^{\infty} \frac{1}{x^3+2}dx \le \int_1^{\infty} \frac{1}{x^3}dx
+= \frac{1}{2}.
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="ipi-cmp-cossqx"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
+</h3>
+<p id="p-99">Show that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_1^{\infty} \frac{\cos^2(x)}{1+x^2} dx \le \frac{\pi}{4}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like">
+<p id="p-100">Since <span class="process-math">\(0 \le \cos^2(x) \le 1\text{,}\)</span> <span class="process-math">\(0 \le
+\frac{\cos^2(x)}{1+x^2} \le \frac{1}{1+x^2}\text{,}\)</span> it follows from the comparison test for integrals that</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-33">
+\begin{align*}
+0 &amp; \le \int_1^{t} \frac{\cos^2(x)}{1+x^2}dx
+\le \int_1^{t} \frac{1}{1+x^2}dx \\
+&amp; =
+\arctan(t)-\arctan(1) \to \frac{\pi}{4} \quad \text{as}\ t \to \infty.
+\end{align*}
+</div>
+<p class="continuation">This establishes the inequality <span class="process-math">\(\int_1^{\infty}
+\frac{\cos^2(x)}{1+x^2} dx \le \frac{\pi}{4}\text{.}\)</span></p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="ipi-cmp-xcube-xp1"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span>
+</h3>
+<p id="p-101">Determine the convergence of</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_1^\infty \frac{1}{x^3-x+1}dx\text{.}
+\end{equation*}
+</div></article></section></div></main>
+</div>
+</body>
+</html>

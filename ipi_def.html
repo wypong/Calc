@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Calculus Definitions and Examples</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus">
+<meta property="book:author" content="Wai Yan Pong">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\ds}{\displaystyle}
+\DeclareMathOperator{\asec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="calbook.html"><span class="title">Calculus:</span> <span class="subtitle">An intuitive approach</span></a></h1>
+<p class="byline">Wai Yan Pong</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "classic",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ipi.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ipi.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ipi_comp_test.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ipi.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ipi.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ipi_comp_test.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="front-colophon.html" data-scroll="front-colophon" class="internal">Colophon</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-I.html" data-scroll="part-I" class="internal"><span class="codenumber">I</span> <span class="title">Calculus I</span></a></li>
+<li class="link part"><a href="part-II.html" data-scroll="part-II" class="internal"><span class="codenumber">II</span> <span class="title">Calculus II</span></a></li>
+<li class="link">
+<a href="tqint.html" data-scroll="tqint" class="internal"><span class="codenumber">1</span> <span class="title">Techniques of Integration</span></a><ul>
+<li><a href="IBP.html" data-scroll="IBP" class="internal">Integration by Parts</a></li>
+<li><a href="trig_int.html" data-scroll="trig_int" class="internal">Trigonometric Integrals</a></li>
+<li><a href="trig_subs.html" data-scroll="trig_subs" class="internal">Trigonometric Substitutions</a></li>
+<li><a href="partial_fractions.html" data-scroll="partial_fractions" class="internal">Integrals of Rational Functions</a></li>
+<li><a href="ex_tqint.html" data-scroll="ex_tqint" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ipi.html" data-scroll="ipi" class="internal"><span class="codenumber">2</span> <span class="title">Improper Integrals</span></a><ul>
+<li><a href="ipi_def.html" data-scroll="ipi_def" class="active">Definitions and Examples</a></li>
+<li><a href="ipi_comp_test.html" data-scroll="ipi_comp_test" class="internal">Comparison Test for integrals</a></li>
+<li><a href="ipi-ex.html" data-scroll="ipi-ex" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="seq_series.html" data-scroll="seq_series" class="internal"><span class="codenumber">3</span> <span class="title">Sequence and Series</span></a><ul>
+<li><a href="sec_sequence.html" data-scroll="sec_sequence" class="internal">Sequences</a></li>
+<li><a href="sec_seq_conv_test.html" data-scroll="sec_seq_conv_test" class="internal">Convergence Tests for Sequences</a></li>
+<li><a href="sec-series.html" data-scroll="sec-series" class="internal">Series</a></li>
+<li><a href="series_conv_test.html" data-scroll="series_conv_test" class="internal">Convergence Tests for Series</a></li>
+<li><a href="power_series.html" data-scroll="power_series" class="internal">Power Series</a></li>
+<li><a href="taylor_series.html" data-scroll="taylor_series" class="internal">Taylor Series</a></li>
+<li><a href="seq_series_ex.html" data-scroll="seq_series_ex" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link"><a href="geoapp.html" data-scroll="geoapp" class="internal"><span class="codenumber">4</span> <span class="title">Geometric Applications</span></a></li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-1.html" data-scroll="appendix-1" class="internal"><span class="codenumber">A</span> <span class="title">Trigonometric Identities</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">B</span> <span class="title">Hints and Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="references-backmatter.html" data-scroll="references-backmatter" class="internal"><span class="title">References</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="back-colophon.html" data-scroll="back-colophon" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="ipi_def"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Definitions and Examples</span>
+</h2>
+<p id="p-81">Suppose <span class="process-math">\(f\)</span> is a function defined on <span class="process-math">\([a,b)\)</span> where <span class="process-math">\(b\)</span> is finite or <span class="process-math">\(+\infty\text{.}\)</span> If</p>
+<ol class="decimal">
+<li id="li-18"><p id="p-derived-li-18"><span class="process-math">\(f\)</span> is integrable on <span class="process-math">\([a,t]\)</span> for each <span class="process-math">\(a \lt t \lt
+b\text{;}\)</span> and that</p></li>
+<li id="li-19"><p id="p-derived-li-19">the limit <span class="process-math">\(\lim_{t \to b^{-}} \int_a^t f(x) dx\)</span> exists in <span class="process-math">\(\mathbb{R} \cup \{\pm \infty\}\text{,}\)</span></p></li>
+</ol>
+<p class="continuation">then we define</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="inf_ipi">
+\begin{equation}
+\int_a^b f(x)\ dx = \lim_{t \to b^{-}} \int_a^t f(x)\ dx.\tag{2.1.1}
+\end{equation}
+</div>
+<p id="p-82">This definition, according to the fundamental theorem of Calculus, agrees with the original definition definite integral when <span class="process-math">\(b \in \mathbb{R}\)</span> and <span class="process-math">\(f\)</span> is integrable on <span class="process-math">\([a,b]\text{.}\)</span> If <span class="process-math">\(b = \infty\)</span> or <span class="process-math">\(f\)</span> is not integrable on <span class="process-math">\([a,b]\text{,}\)</span> for example <span class="process-math">\(f\)</span> is unbounded on <span class="process-math">\([a,b]\text{,}\)</span> then we call the integral in <a href="" class="xref" data-knowl="./knowl/inf_ipi.html" title="Equation 2.1.1">(2.1.1)</a> an <dfn class="terminology">improper integral</dfn>. </p>
+<p id="p-83">Likewise, if <span class="process-math">\(f\)</span> is defined on <span class="process-math">\((a,b]\)</span> where <span class="process-math">\(a \in \mathbb{R}
+\cup \{-\infty\}\)</span> and <span class="process-math">\(f\)</span> is integrable on <span class="process-math">\([t,b]\)</span> for all <span class="process-math">\(a
+\lt t \lt b\)</span> and then we define</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="neg-ipi">
+\begin{equation}
+\int_a^b f(x) dx = \lim_{t \to a^+} \int_t^b f(x) dx\tag{2.1.2}
+\end{equation}
+</div>
+<p class="continuation">whenever the limit exists. Finally, if <span class="process-math">\(f\)</span> is defined on <span class="process-math">\((a,b)\)</span> where <span class="process-math">\(a\lt b\)</span> and <span class="process-math">\(a,b \in \mathbb{R} \cup\{\pm \infty\}\)</span> and integrable on all subintervals <span class="process-math">\([s,t]\text{,}\)</span> then we fix <span class="process-math">\(c \in (a,b)\)</span> and define</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="ipi_both">
+\begin{equation}
+\int_a^b f(x)dx = \int_a^c f(x)dx + \int_c^b f(x)dx\tag{2.1.3}
+\end{equation}
+</div>
+<p class="continuation">provided that the integrals on the right-hand side exist, possibly as improper integrals, and that the sum is not of the form <span class="process-math">\(+\infty +
+(-\infty)\text{;}\)</span> otherwise, we declare that the improper integral is undefined. The definition is independent of the choice of <span class="process-math">\(c\text{.}\)</span> We say that an improper integral <dfn class="terminology">converges</dfn> if it is has a finite value, if it is either <span class="process-math">\(+\infty\)</span> or <span class="process-math">\(-\infty\text{,}\)</span> then we say that the improper integral <dfn class="terminology">exists</dfn> but <dfn class="terminology">diverges</dfn> to <span class="process-math">\(+\infty\)</span> or <span class="process-math">\(-\infty\text{,}\)</span> respectively.</p>
+<p id="p-84">There is a common classification of improper integrals as follows: An improper integral is</p>
+<ol class="decimal">
+<li id="li-20"><p id="p-derived-li-20"><em class="emphasis">Type I</em> if the domain of integration is not bounded.</p></li>
+<li id="li-21"><p id="p-derived-li-21"><em class="emphasis">Type II</em> if the integrand is unbounded on the domain of integration.</p></li>
+</ol>
+<p class="continuation">An improper integral can be both Type I and Type II, e.g. <span class="process-math">\(\int_0^{\infty}
+\frac{1}{x^2}dx\text{.}\)</span> We mention this terminology just for reader's information as it is common in Calculus books. However, this classification has no intrinsic importance.</p>
+<p id="p-85">Let us work out a few examples to solidify these concepts.</p>
+<article class="example example-like" id="ipi_rep_x"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
+</h3>
+<p id="p-86">For <span class="process-math">\(t \ge 1\text{,}\)</span> the definite integral</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_1^t \frac{1}{x}dx = \ln
+t - \ln 1 = \ln t \to +\infty, 
+\end{equation*}
+</div>
+<p class="continuation">as <span class="process-math">\(t \to +\infty\text{.}\)</span> Therefore, the improper integral <span class="process-math">\(\int_1^\infty
+\frac{1}{x} dx\)</span> exists but diverges to <span class="process-math">\(+ \infty\text{.}\)</span></p></article><article class="example example-like" id="ipi_x_power_-2"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
+</h3>
+<p id="p-87">Consider the improper integral <span class="process-math">\(\int_1^{\infty} \frac{1}{x^2}dx\text{.}\)</span> For <span class="process-math">\(t \ge 1\text{,}\)</span> the definite integral</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_1^t \frac{1}{x^2}dx = \left. -\frac{1}{x} \right|_1^{t} =
+\left.\frac{1}{x} \right|_t^1 = 1 - \frac{1}{t} \to 1, \qquad t \to
++\infty.	
+\end{equation*}
+</div>
+<p class="continuation">Therefore, <span class="process-math">\(\int_1^\infty \frac{1}{x^2} dx\)</span> converges to <span class="process-math">\(1\text{.}\)</span></p></article><p id="p-88">For improper integral of the form <span class="process-math">\(\int_a^{\infty}\frac{1}{x^p} dx\)</span> (<span class="process-math">\(a \gt 0\)</span>) the dividing line for convergence is at <span class="process-math">\(p=1\text{.}\)</span></p>
+<article class="proposition theorem-like" id="ipi-p-test"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
+</h3>For <span class="process-math">\(a \gt 0\text{,}\)</span><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_a^{\infty}\frac{1}{x^p} dx =
+\begin{cases}
+\frac{1}{(p-1)a^{p-1}} &amp; p \gt 1; \\
+\infty  &amp; p \le 1.
+\end{cases}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-1"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof">Since<div class="displaymath process-math" data-contains-math-knowls="./knowl/ipi_rep_x.html">
+\begin{equation*}
+\int_a^t \frac{1}{x^p} dx = \left. \frac{1}{(1-p)x^{p-1}}\right|_a^t =
+\frac{1}{(p-1)a^{p-1}} - \frac{1}{(p-1)t^{p-1}},
+\end{equation*}
+</div>the integral converges to <span class="process-math">\(\frac{1}{(p-1)a^{p-1}}\)</span> when <span class="process-math">\(p
+\ge 1\)</span> and diverges to <span class="process-math">\(+\infty\)</span> when <span class="process-math">\(p \lt 1\text{.}\)</span> We have already showed in <a href="" class="xref" data-knowl="./knowl/ipi_rep_x.html" title="Example 2.1.1">Example 2.1.1</a> that the integral diverges to <span class="process-math">\(+\infty\)</span> for <span class="process-math">\(p=1\text{.}\)</span></article></div>
+<article class="exercise exercise-like" id="ipi_inv"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
+</h3>
+<p id="p-89">Suppose <span class="process-math">\(a \gt 0\)</span> and <span class="process-math">\(f\)</span> continuous on <span class="process-math">\((0,a]\text{.}\)</span> Show that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_0^a f(x) dx = \int_{1/a}^{\infty} \frac{f(1/u)}{u^2} du
+\end{equation*}
+</div>
+<p class="continuation">as improper integrals.</p>
+<p id="p-90">Deduce from the above statement and <a href="" class="xref" data-knowl="./knowl/ipi-p-test.html" title="Proposition 2.1.3">Proposition 2.1.3</a> that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ipi-p-test.html">
+\begin{equation*}
+\int_0^a \frac{1}{x^p} dx = 
+\begin{cases}
+\frac{a^{1-p}}{1-p} &amp; p \lt 1; \\
+\infty &amp; p \ge 1.
+\end{cases}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-6" id="hint-6"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-6"><div class="hint solution-like">Make the substitution <span class="process-math">\(u = 1/x\)</span>
+</div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">
+<p id="p-91">For <span class="process-math">\(t &gt; 0\text{,}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ipi-p-test.html">
+\begin{equation*}
+\int_t^a f(x) dx \stackrel{u=1/x}{=} \int_{1/t}^{1/a} f(1/u)\frac{-du}{u^2}
+= \int_{1/a}^{1/t}\frac{f(1/u)}{u^2}du.
+\end{equation*}
+</div>
+<p class="continuation">As <span class="process-math">\(t \to 0^+, 1/t \to \infty\text{,}\)</span> the first assertion follows. Applying that to <span class="process-math">\(f(x) = 1/x^p\text{,}\)</span> the second assertion follows immediately from <a href="" class="xref" data-knowl="./knowl/ipi-p-test.html" title="Proposition 2.1.3">Proposition 2.1.3</a></p>
+</div></div>
+</div></article><article class="example example-like" id="ipi-both-types"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span>
+</h3>Consider the improper integral <span class="process-math">\(\int_0^{\infty} \frac{1}{x^2}
+dx\text{.}\)</span> According to <a href="" class="xref" data-knowl="./knowl/ipi_both.html" title="Equation 2.1.3">(2.1.3)</a>, we should pick a point <span class="process-math">\(c \in (0,\infty)\text{,}\)</span> say <span class="process-math">\(c=1\)</span> and investigate the two integrals<div class="displaymath process-math" data-contains-math-knowls="./knowl/ipi_both.html ./knowl/ipi-p-test.html ./knowl/ipi_inv.html">
+\begin{equation*}
+\int_0^1 \frac{1}{x^2} dx\ \text{and}\ \int_1^{\infty} \frac{1}{x^2}dx
+\end{equation*}
+</div>Even though <span class="process-math">\(\int_1^{\infty} \frac{1}{x^2} dx =1\)</span> (<a href="" class="xref" data-knowl="./knowl/ipi-p-test.html" title="Proposition 2.1.3">Proposition 2.1.3</a>) <span class="process-math">\(\int_0^1 \frac{1}{x^2} dx = +\infty\)</span> (<a href="" class="xref" data-knowl="./knowl/ipi_inv.html" title="Exercise 2.1.4">Exercise 2.1.4</a>). Therefore, <span class="process-math">\(\int_0^{\infty} \frac{1}{x^2} dx\)</span> diverges to <span class="process-math">\(\infty\)</span> according to the definition.</article><article class="example example-like" id="example-18"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span>
+</h3>
+<p id="p-92">Let us find the values of <span class="process-math">\(p\)</span> for which the integral</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_{e}^{\infty} \frac{1}{x(\ln(x))^p} dx
+\end{equation*}
+</div>
+<p class="continuation">converges and evaluate the integral when it is convergent.</p></article></section></div></main>
+</div>
+</body>
+</html>

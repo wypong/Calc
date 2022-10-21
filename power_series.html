@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Calculus Power Series</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus">
+<meta property="book:author" content="Wai Yan Pong">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\ds}{\displaystyle}
+\DeclareMathOperator{\asec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="calbook.html"><span class="title">Calculus:</span> <span class="subtitle">An intuitive approach</span></a></h1>
+<p class="byline">Wai Yan Pong</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "classic",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="series_conv_test.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="seq_series.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="taylor_series.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="series_conv_test.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="seq_series.html" title="Up">Up</a><a class="next-button button toolbar-item" href="taylor_series.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="front-colophon.html" data-scroll="front-colophon" class="internal">Colophon</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-I.html" data-scroll="part-I" class="internal"><span class="codenumber">I</span> <span class="title">Calculus I</span></a></li>
+<li class="link part"><a href="part-II.html" data-scroll="part-II" class="internal"><span class="codenumber">II</span> <span class="title">Calculus II</span></a></li>
+<li class="link">
+<a href="tqint.html" data-scroll="tqint" class="internal"><span class="codenumber">1</span> <span class="title">Techniques of Integration</span></a><ul>
+<li><a href="IBP.html" data-scroll="IBP" class="internal">Integration by Parts</a></li>
+<li><a href="trig_int.html" data-scroll="trig_int" class="internal">Trigonometric Integrals</a></li>
+<li><a href="trig_subs.html" data-scroll="trig_subs" class="internal">Trigonometric Substitutions</a></li>
+<li><a href="partial_fractions.html" data-scroll="partial_fractions" class="internal">Integrals of Rational Functions</a></li>
+<li><a href="ex_tqint.html" data-scroll="ex_tqint" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ipi.html" data-scroll="ipi" class="internal"><span class="codenumber">2</span> <span class="title">Improper Integrals</span></a><ul>
+<li><a href="ipi_def.html" data-scroll="ipi_def" class="internal">Definitions and Examples</a></li>
+<li><a href="ipi_comp_test.html" data-scroll="ipi_comp_test" class="internal">Comparison Test for integrals</a></li>
+<li><a href="ipi-ex.html" data-scroll="ipi-ex" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="seq_series.html" data-scroll="seq_series" class="internal"><span class="codenumber">3</span> <span class="title">Sequence and Series</span></a><ul>
+<li><a href="sec_sequence.html" data-scroll="sec_sequence" class="internal">Sequences</a></li>
+<li><a href="sec_seq_conv_test.html" data-scroll="sec_seq_conv_test" class="internal">Convergence Tests for Sequences</a></li>
+<li><a href="sec-series.html" data-scroll="sec-series" class="internal">Series</a></li>
+<li><a href="series_conv_test.html" data-scroll="series_conv_test" class="internal">Convergence Tests for Series</a></li>
+<li><a href="power_series.html" data-scroll="power_series" class="active">Power Series</a></li>
+<li><a href="taylor_series.html" data-scroll="taylor_series" class="internal">Taylor Series</a></li>
+<li><a href="seq_series_ex.html" data-scroll="seq_series_ex" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link"><a href="geoapp.html" data-scroll="geoapp" class="internal"><span class="codenumber">4</span> <span class="title">Geometric Applications</span></a></li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-1.html" data-scroll="appendix-1" class="internal"><span class="codenumber">A</span> <span class="title">Trigonometric Identities</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">B</span> <span class="title">Hints and Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="references-backmatter.html" data-scroll="references-backmatter" class="internal"><span class="title">References</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="back-colophon.html" data-scroll="back-colophon" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="power_series"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.5</span> <span class="title">Power Series</span>
+</h2>
+<section class="introduction" id="introduction-9"><p id="p-211">A <dfn class="terminology">power series in <span class="process-math">\(x\)</span> about</dfn> a point <span class="process-math">\(x_0\)</span>  is a series of the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{n=0}^{\infty} a_n(x-x_0)^n = a_0 + a_1(x-x_0) + a_2(x-x_0)^2
++ \cdots
+\end{equation*}
+</div>
+<p class="continuation">The point <span class="process-math">\(x_0\)</span> is called the <dfn class="terminology">center</dfn> of the power series.</p>
+<p id="p-212">Power series can be thought has a natural generalization of polynomials. Just as polynomials, power series can be regarded as functions of <span class="process-math">\(x\)</span> but, in the case of power series, we need to take convergence into account. It is clear that a power series <span class="process-math">\(\sum a_n(x-x_0)^n\)</span> always converges to <span class="process-math">\(a_0\)</span> at its center <span class="process-math">\(x=x_0\text{.}\)</span> We say the power series is <dfn class="terminology">convergent</dfn> if it converges at some point <em class="emphasis">other than</em> its center.</p></section><article class="example example-like" id="sum_power_x"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.1</span><span class="period">.</span>
+</h3>The power series<div class="displaymath process-math" data-contains-math-knowls="./knowl/series_geo.html" id="men-15">
+\begin{equation}
+\sum_{n=0}^{\infty} x^n = 1 + x+ x^2 + \cdots\tag{3.5.1}
+\end{equation}
+</div>is centered at zero. It is a geometric series when <span class="process-math">\(x\)</span> is evaluated at a point. Hence, by <a href="" class="xref" data-knowl="./knowl/series_geo.html" title="Proposition 3.3.5">Proposition 3.3.5</a>, this power series converges to <span class="process-math">\(\frac{1}{1-x}\)</span> for <span class="process-math">\(x \in (-1,1)\text{.}\)</span></article><p id="p-213">We say that a convergent power series <span class="process-math">\(\sum a_n(x-x_0)^n\)</span> <dfn class="terminology">represents</dfn> a function <span class="process-math">\(f(x)\)</span> on a set <span class="process-math">\(D\)</span> if the power series converges to <span class="process-math">\(f(x)\)</span> at every <span class="process-math">\(x \in D\text{.}\)</span> The above example shows that <span class="process-math">\(\sum_{n=0}^{\infty} x^n\)</span> represents <span class="process-math">\(\frac{1}{1-x}\)</span> on <span class="process-math">\((-1,1)\text{.}\)</span></p>
+<article class="example example-like" id="sum_power_x_over_n"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.2</span><span class="period">.</span>
+</h3>
+<p id="p-214">Consider the power series</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="men-16">
+\begin{equation}
+\sum_{n=0}^{\infty} \frac{x^{n+1}}{n+1} = x + \frac{x^2}{2} +
+\frac{x^3}{3} + \cdots\tag{3.5.2}
+\end{equation}
+</div>
+<p class="continuation">Since <span class="process-math">\(\frac{|x^{n+2}/(n+2)|}{|x^{n+1}/(n+1)|} =
+\frac{n+1}{n+2}|x| \to |x|\text{,}\)</span> as <span class="process-math">\(n\to \infty\text{.}\)</span> Therefore, according to the ratio test, the power series converges when <span class="process-math">\(|x|
+\lt 1\text{,}\)</span> i.e. <span class="process-math">\(x \in (-1,1)\)</span> and diverges when <span class="process-math">\(|x| \gt
+1\text{.}\)</span> When <span class="process-math">\(|x|=1\)</span> the ratio test is inconclusive. We need further investigation to decide the convergence.</p>
+<p id="p-215">When <span class="process-math">\(x = 1\text{,}\)</span> the power series turns into the Harmonic Series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{n=0}^{\infty} \frac{1}{n+1} = 1+ \frac{1}{2} + \frac{1}{3}
++ \cdots
+\end{equation*}
+</div>
+<p class="continuation">and is divergent.</p>
+<p id="p-216">On the other hand, when <span class="process-math">\(x=-1\text{,}\)</span> then the power series turns into the alternating series</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\sum_{n=0}^{\infty} \frac{(-1)^{n+1}}{n+1} = 1- \frac{1}{2}
++ \frac{1}{3} - \cdots
+\end{equation*}
+</div>
+<p class="continuation">and is convergent by the alternating series test. And we conclude that power series <span class="process-math">\(\sum_{n=0}^{\infty}
+\frac{x^{n+1}}{n+1}\)</span> converges on the interval <span class="process-math">\([-1,1)\text{.}\)</span></p></article><article class="example example-like" id="power_series_e"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.3</span><span class="period">.</span>
+</h3>
+<p id="p-217">Consider the power series</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="men-17">
+\begin{equation}
+\sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!}
++ \cdots\tag{3.5.3}
+\end{equation}
+</div>
+<p class="continuation">Since <span class="process-math">\(\frac{|x^{n+1}/(n+1)!|}{|x^n/n!|} = |x|\frac{n!}{(n+1)!}
+= \frac{|x|}{n+1} \to 0\)</span> for any fixed <span class="process-math">\(x\text{,}\)</span> the power series converges for all real numbers. We will see that the function represented by this power series is the exponential function <span class="process-math">\(e^x\text{.}\)</span></p></article><article class="example example-like" id="power_series_div"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.4</span><span class="period">.</span>
+</h3>Consider the power series<div class="displaymath process-math" data-contains-math-knowls="" id="men-18">
+\begin{equation}
+\sum_{n=0}^{\infty} n!{x^n} = 1 + x + 2!{x^2} + 3!{x^3} + \cdots\tag{3.5.4}
+\end{equation}
+</div>Since <span class="process-math">\(\frac{|(n+1)!x^{n+1}|}{|n!x^n|} = (n+1)|x| \to +\infty\)</span> for any fixed <span class="process-math">\(x \neq 0\text{,}\)</span> the power series is divergent.</article><p id="p-218">The following is the key result about convergence of power series</p>
+<article class="theorem theorem-like" id="conv_of_ps"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5.5</span><span class="period">.</span>
+</h3>
+<p id="p-219">The power series <span class="process-math">\(\sum_{n=0}^{\infty} a_n(x-x_0)^n\)</span></p>
+<ul class="disc">
+<li id="li-38"><p id="p-derived-li-38">converges absolutely <span class="process-math">\(|x-x_0| \lt R\text{,}\)</span> i.e. for <span class="process-math">\(x \in
+(x_0-R,x_0+R)\text{.}\)</span></p></li>
+<li id="li-39"><p id="p-derived-li-39">diverges on <span class="process-math">\(|x-x_0| \gt R\)</span></p></li>
+</ul>
+<p class="continuation">where <span class="process-math">\(\displaystyle R = \frac{1}{\limsup |a_n|^{1/n}}\)</span> with the convention that <span class="process-math">\(1/\infty = 0\)</span> and <span class="process-math">\(1/0 = \infty\text{.}\)</span></p></article><article class="remark remark-like" id="rm_ps_conv"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.5.6</span><span class="period">.</span>
+</h3>
+<ol id="p-220" class="decimal">
+<li id="li-40"><p id="p-derived-li-40">The <span class="process-math">\(0 \le R \le \infty\)</span> appears in the theorem is called the <dfn class="terminology">radius of convergence</dfn> of the power series . When <span class="process-math">\(R = \infty\text{,}\)</span> the power series converges everywhere. When <span class="process-math">\(R = 0\text{,}\)</span> the power series is divergent.</p></li>
+<li id="li-41"><p id="p-derived-li-41">We have not defined <span class="process-math">\(\limsup\)</span> in this book. It is enough to say here that if either <span class="process-math">\(\lim |a_{n+1}|/|a_n|\text{,}\)</span> or <span class="process-math">\(\lim
+|a_n|^{1/n}\)</span> exists (the limit you find when applying ratio test or root test), then either of them equals to <span class="process-math">\(\limsup
+|a_n|^{1/n}\text{.}\)</span></p></li>
+<li id="li-42"><p id="p-derived-li-42">It follows from the theorem above that a power series converges on an <em class="emphasis">interval</em>. However, what type of interval, i.e. the convergence at the end points of the interval needs to be determine on a case-by-case bases as we have seen in <a href="" class="xref" data-knowl="./knowl/sum_power_x_over_n.html" title="Example 3.5.2">Example 3.5.2</a>. The interval on which the power series converges is called its <dfn class="terminology">interval of convergence</dfn>.</p></li>
+<li id="li-43"><p id="p-derived-li-43">Often, we make a change of variable to center the power series at 0. This makes the statements of many results simpler to state.</p></li>
+</ol></article><p id="p-221">With the interval of convergence the function represented by a power series behaves nicely. This is one key reason why power series is a powerful tool in studying functions.</p>
+<article class="theorem theorem-like" id="power_series_rep"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5.7</span><span class="period">.</span>
+</h3>
+<p id="p-222">Let <span class="process-math">\(\sum_{n=0}^{\infty} a_n(x-x_0)^n\)</span> be a power series with radius of convergence <span class="process-math">\(R \gt 0\text{.}\)</span> Then on the open interval <span class="process-math">\((x_0-R,
+x_0 +R)\)</span> the function <span class="process-math">\(f(x) = \sum a_n(x-x_0)^n\)</span> is both differentiable and has an anti-derivative. Moreover,</p>
+<ul class="disc">
+<li id="li-44"><p id="p-derived-li-44"><span class="process-math">\(\displaystyle f'(x) = \sum_{n=1}^{\infty} na_n (x-x_0)^{n-1}.\)</span></p></li>
+<li id="li-45"><p id="p-derived-li-45"><span class="process-math">\(\displaystyle \int_{x_0}^x f(t)dt = \sum_{n=0}^{\infty}
+\frac{a_n}{n+1}(x-x_0)^{n+1}.\)</span></p></li>
+</ul>
+<p class="continuation">and these power series all have radius of convergence <span class="process-math">\(R\text{.}\)</span> Also, if the power series is convergent at an end-point, i.e. <span class="process-math">\(x_0+R\)</span> or <span class="process-math">\(x_0-R\text{,}\)</span> then <span class="process-math">\(f(x)\)</span> is continuous at that end-point.</p></article><article class="remark remark-like" id="rmk_ps_rep"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.5.8</span><span class="period">.</span>
+</h3>
+<ol class="decimal">
+<li id="li-46"><p id="p-223">Let <span class="process-math">\(I\)</span> be an open interval (not necessary bounded). We say that a function <span class="process-math">\(f\)</span> is <dfn class="terminology">analytic</dfn>  on <span class="process-math">\(I\)</span> if <span class="process-math">\(f\)</span> represented by some power series on <span class="process-math">\(I\text{.}\)</span> We say that <span class="process-math">\(f\)</span> is <dfn class="terminology">analytic at a point</dfn> <span class="process-math">\(x_0\)</span> if it is analytic on an open interval containing <span class="process-math">\(x_0\text{.}\)</span> Most of the functions one encounters in a Calculus course are analytic on some open interval and hence can be studied by using power series.</p></li>
+<li id="li-47"><p id="p-224">The theorem above guarantees that an analytic function is both differentiable and possesses an anti-derivative. Moreover, both can be found easily---on a term-by-term basis. In fact, by repeat application of the theorem, we see that an analytic function has derivative of all orders.</p></li>
+<li id="li-48"><p id="p-derived-li-48">Suppose a function <span class="process-math">\(f(x)\)</span> is analytic at <span class="process-math">\(x_0\text{,}\)</span> i.e.<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x)=\sum_{n=0}^{\infty} a_n(x-x_0)^n =a_0 + a_1(x-x_0) +
+a_2(x-x_0)^2 + a_3(x-x_0)^3 + \cdots 
+\end{equation*}
+</div>on some open interval <span class="process-math">\(I\)</span> containing <span class="process-math">\(x_0\text{.}\)</span> Then <span class="process-math">\(a_0 =
+f(x_0)\text{.}\)</span> Since, according to the theorem above,<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f'(x) = a_1 + 2a_2(x-x_0) + 3a_3(x-x_0)^2 + 4a_4(x-x_0)^2 +
+\cdots
+\end{equation*}
+</div><span class="process-math">\(a_1 = f'(x_0)\text{.}\)</span> Differentiating one more time and set <span class="process-math">\(x=x_0\)</span> yields <span class="process-math">\(2 a_2 = f''(x_0)\text{.}\)</span> By repeat differentiation, we see that<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f^{(n)}(x) = n(n-1)(n-2)\cdots 1 a_n + \text{terms with factor}
+(x-x_0).
+\end{equation*}
+</div>Thus, <span class="process-math">\(f^{(n)}(x_0) = n!a_n\text{.}\)</span> In other words, <span class="process-math">\(a_n =
+\dfrac{f^{(n)}(x_0)}{n!}\text{.}\)</span> This tells us that the coefficients <span class="process-math">\(a_n\)</span>'s are completely determined by <span class="process-math">\(f\text{.}\)</span> In other words, if <span class="process-math">\(f\)</span> is analytic at <span class="process-math">\(x_0\)</span> then it is represented by a <em class="emphasis">unique</em> power series, namely<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n
+\end{equation*}
+</div>on an open interval containing <span class="process-math">\(x_0\text{.}\)</span> This series is called the <dfn class="terminology">Taylor series</dfn> of <span class="process-math">\(f\)</span> at <span class="process-math">\(x_0\text{.}\)</span></p></li>
+<li id="li-49"><p id="p-derived-li-49">Two things to keep in mind. The Taylor series of <span class="process-math">\(f\)</span> at <span class="process-math">\(x_0\)</span> exists if <span class="process-math">\(f\)</span> is smooth (i.e. having derivatives of all orders) at <span class="process-math">\(x_0\text{.}\)</span> However, 1) the Taylor series maybe divergent and 2) even if the Taylor series is convergent there is no guarantee that it represent <span class="process-math">\(f\)</span> on any open interval containing <span class="process-math">\(x_0\text{.}\)</span> In other words, a function being smooth at a point does not imply it is analytic at that point.</p></li>
+</ol></article><p id="p-225">We often invoke the uniqueness to find the series that represents an analytic function instead of computing the coefficients by differentiation. Let us illustrate this by an example.</p>
+<article class="example example-like" id="ps_rep_one_over_one_plus_xsq"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.9</span><span class="period">.</span>
+</h3>
+<p id="p-226">Let us show that <span class="process-math">\(\dfrac{1}{1+x^2} \)</span> is analytic at <span class="process-math">\(0\)</span> and find its power series representation. Recall that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{1}{1-x} = 1 + x + x^2 + \cdots 
+\end{equation*}
+</div>
+<p class="continuation">for all <span class="process-math">\(x\)</span> with <span class="process-math">\(|x| \lt 1\text{.}\)</span> We conclude that</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-36">
+\begin{align*}
+\frac{1}{1+x^2} = \frac{1}{1-(-x^2)} &amp; = 1 + (-x^2) +
+(-x^2)^2 +
+\cdots\\
+&amp; = 1-x^2 + x^4 - \cdots = \sum_{n=0}^{\infty} (-1)^nx^{2n}
+\end{align*}
+</div>
+<p class="continuation">for all <span class="process-math">\(x\)</span> with <span class="process-math">\(|(-x^2)| = |x|^2 \lt 1\text{,}\)</span> i.e. with <span class="process-math">\(|x|
+\lt 1\text{.}\)</span></p></article><p id="p-227">Now with the help of <a href="" class="xref" data-knowl="./knowl/power_series_rep.html" title="Theorem 3.5.7">Theorem 3.5.7</a> we can find the representation of <span class="process-math">\(\arctan(x)\)</span></p>
+<article class="example example-like" id="ps_tan"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.10</span><span class="period">.</span>
+</h3>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-37">
+\begin{align*}
+\arctan(x) &amp; = \int_0^x \frac{1}{1+t^2} dt = \int_0^x (1 -
+t^2 + t^4 - \cdots) dt\\
+&amp; = \int_0^{x} \sum_{n = 0}^{\infty} (-1)^{n} t^{2n} dt =
+\sum_{n=0}^{\infty} (-1)^n\frac{x^{2n+1}}{2n+1}\\
+&amp; = x - \frac{x^3}{3} + \frac{x^5}{5} - \cdots
+\end{align*}
+</div>
+<p class="continuation">for all <span class="process-math">\(|x| \lt 1\text{.}\)</span></p>
+<p id="p-229">Note that by the alternating series test, the power series converges at <span class="process-math">\(\pm 1\text{.}\)</span> So by continuity, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{\pi}{4} = \arctan(1) = 1 - \frac{1}{3} + \frac{1}{5} -
+\frac{1}{7} + \cdots 
+\end{equation*}
+</div>
+<p class="continuation">This gives us a way to estimate <span class="process-math">\(\pi\text{.}\)</span> <a class="external" href="https://www.youtube.com/watch?v=0_eJlNVatsU" target="_blank"><code class="code-inline tex2jax_ignore">Here</code></a> is an explanation of this equality without using Calculus.</p></article><article class="example example-like" id="ps_ln"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.11</span><span class="period">.</span>
+</h3>
+<p id="p-230">We have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/power_series_rep.html">
+\begin{equation*}
+\frac{1}{1+x} = \frac{1}{1-(-x)} = \sum_{n=0}^{\infty} (-1)^n x^n =
+1-x + x^2 - x^3 + \ldots 
+\end{equation*}
+</div>
+<p class="continuation">on <span class="process-math">\(|-x| = |x| \lt 1\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/power_series_rep.html" title="Theorem 3.5.7">Theorem 3.5.7</a>, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/power_series_rep.html">
+\begin{equation*}
+\ln(1+x) = \int_0^x \frac{1}{1+t} dt = \sum_{n=0}^{\infty} (-1)^n
+\frac{x^{n+1}}{n+1} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4}
++ \ldots
+\end{equation*}
+</div>
+<p class="continuation">The series converges at <span class="process-math">\(x=1\)</span> by the alternating series test and diverges to <span class="process-math">\(-\infty\)</span> at <span class="process-math">\(x=-1\)</span> by the <span class="process-math">\(p\)</span>-test. So, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/power_series_rep.html">
+\begin{equation*}
+\ln(2) = \ln(1+1) = 1-\frac{1}{2} +\frac{1}{3} - \frac{1}{4} +
+\cdots 
+\end{equation*}
+</div></article><article class="example example-like" id="ps_sin_cos"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.12</span><span class="period">.</span>
+</h3>
+<p id="p-231">Later so we will show that for any <span class="process-math">\(x \in \mathbb{R}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/power_series_rep.html">
+\begin{equation*}
+\sin(x) = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!} =
+x-\frac{x^3}{3!} +\frac{x^5}{5} - \frac{x^7}{7!} + \cdots
+\end{equation*}
+</div>
+<p class="continuation">Thus, by <a href="" class="xref" data-knowl="./knowl/power_series_rep.html" title="Theorem 3.5.7">Theorem 3.5.7</a> again, we have for any <span class="process-math">\(x
+\in \mathbb{R}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/power_series_rep.html">
+\begin{equation*}
+\cos{x} = \frac{d}{dx}\sin(x) = \sum_{n=0}^{\infty} (-1)^n
+\frac{x^{2n}}{(2n)!} = 1- \frac{x^2}{2!} + \frac{x^4}{4!} -
+\frac{x^6}{6!} + \cdots
+\end{equation*}
+</div>
+<p class="continuation">Here is a <a class="external" href="https://www.youtube.com/watch?v=x09IsbVZeXo" target="_blank"><code class="code-inline tex2jax_ignore">geometric</code></a> explanation of the analyticity of <span class="process-math">\(\sin(x)\)</span> at <span class="process-math">\(0\text{.}\)</span></p></article></section></div></main>
+</div>
+</body>
+</html>

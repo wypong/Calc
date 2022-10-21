@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Calculus Integrals of Rational Functions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus">
+<meta property="book:author" content="Wai Yan Pong">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\ds}{\displaystyle}
+\DeclareMathOperator{\asec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="calbook.html"><span class="title">Calculus:</span> <span class="subtitle">An intuitive approach</span></a></h1>
+<p class="byline">Wai Yan Pong</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "classic",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="trig_subs.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="tqint.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ex_tqint.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="trig_subs.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="tqint.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ex_tqint.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="front-colophon.html" data-scroll="front-colophon" class="internal">Colophon</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-I.html" data-scroll="part-I" class="internal"><span class="codenumber">I</span> <span class="title">Calculus I</span></a></li>
+<li class="link part"><a href="part-II.html" data-scroll="part-II" class="internal"><span class="codenumber">II</span> <span class="title">Calculus II</span></a></li>
+<li class="link">
+<a href="tqint.html" data-scroll="tqint" class="internal"><span class="codenumber">1</span> <span class="title">Techniques of Integration</span></a><ul>
+<li><a href="IBP.html" data-scroll="IBP" class="internal">Integration by Parts</a></li>
+<li><a href="trig_int.html" data-scroll="trig_int" class="internal">Trigonometric Integrals</a></li>
+<li><a href="trig_subs.html" data-scroll="trig_subs" class="internal">Trigonometric Substitutions</a></li>
+<li><a href="partial_fractions.html" data-scroll="partial_fractions" class="active">Integrals of Rational Functions</a></li>
+<li><a href="ex_tqint.html" data-scroll="ex_tqint" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ipi.html" data-scroll="ipi" class="internal"><span class="codenumber">2</span> <span class="title">Improper Integrals</span></a><ul>
+<li><a href="ipi_def.html" data-scroll="ipi_def" class="internal">Definitions and Examples</a></li>
+<li><a href="ipi_comp_test.html" data-scroll="ipi_comp_test" class="internal">Comparison Test for integrals</a></li>
+<li><a href="ipi-ex.html" data-scroll="ipi-ex" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="seq_series.html" data-scroll="seq_series" class="internal"><span class="codenumber">3</span> <span class="title">Sequence and Series</span></a><ul>
+<li><a href="sec_sequence.html" data-scroll="sec_sequence" class="internal">Sequences</a></li>
+<li><a href="sec_seq_conv_test.html" data-scroll="sec_seq_conv_test" class="internal">Convergence Tests for Sequences</a></li>
+<li><a href="sec-series.html" data-scroll="sec-series" class="internal">Series</a></li>
+<li><a href="series_conv_test.html" data-scroll="series_conv_test" class="internal">Convergence Tests for Series</a></li>
+<li><a href="power_series.html" data-scroll="power_series" class="internal">Power Series</a></li>
+<li><a href="taylor_series.html" data-scroll="taylor_series" class="internal">Taylor Series</a></li>
+<li><a href="seq_series_ex.html" data-scroll="seq_series_ex" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link"><a href="geoapp.html" data-scroll="geoapp" class="internal"><span class="codenumber">4</span> <span class="title">Geometric Applications</span></a></li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-1.html" data-scroll="appendix-1" class="internal"><span class="codenumber">A</span> <span class="title">Trigonometric Identities</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">B</span> <span class="title">Hints and Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="references-backmatter.html" data-scroll="references-backmatter" class="internal"><span class="title">References</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="back-colophon.html" data-scroll="back-colophon" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="partial_fractions"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Integrals of Rational Functions</span>
+</h2>
+<section class="introduction" id="introduction-5"><p id="p-50">In this section, we are going to apply techniques from previous sections to compute indefinite integrals of rational functions (over <span class="process-math">\(\mathbb{R}\)</span>). We start by discussing a new ingredient--partial fraction decomposition. This technique allows us to write a rational function, represented as <span class="process-math">\(P/Q\)</span> (with <span class="process-math">\(P,Q\)</span> co-prime polynomials) as a sum of a polynomial and rational functions whose denominators are factors of <span class="process-math">\(Q\)</span> that with a single irreducible factor.</p></section><section class="subsection" id="sse-pfd"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.1</span> <span class="title">Partial Fraction Decomposition</span>
+</h3>
+<p id="p-51">We first recall a few definitions and facts about polynomials from algebra. Unless otherwise stated, we only discuss polynomial over the <em class="emphasis">real numbers</em>.</p>
+<p id="p-52">A non-zero polynomial is <dfn class="terminology">monic</dfn> if its leading coefficient is <span class="process-math">\(1\text{.}\)</span> A non-constant polynomial is <dfn class="terminology">irreducible</dfn>  if it is not a product of two polynomials of positive degree. Two polynomials are <dfn class="terminology">co-prime</dfn> if they do not have any positive degree factor in common.</p>
+<article class="fact theorem-like" id="fact-1"><h4 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span>
+</h4>
+<p id="p-53">Every polynomial is a product of irreducible polynomials. Moreover, the irreducible factors of a polynomial are uniquely determined by the polynomial.</p></article><article class="fact theorem-like" id="fact-2"><h4 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span>
+</h4>
+<p id="p-54">An irreducible real polynomial has degree at most 2.</p></article><p id="p-55">A linear (degree <span class="process-math">\(1\)</span>) polynomial is clearly irreducible. A quadratic polynomial is reducible if and only if it has a linear factor. Dividing a polynomial <span class="process-math">\(p(x)\)</span> by a linear polynomial <span class="process-math">\((x-a)\)</span> (<span class="process-math">\(a \in
+\mathbb{R}\)</span>), we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p(x) = q(x)(x-a) + r
+\end{equation*}
+</div>
+<p class="continuation">Therefore, <span class="process-math">\(a\)</span> is a root of <span class="process-math">\(p(x)\)</span> if and only if <span class="process-math">\(x-a\)</span> divides <span class="process-math">\(p(x)\text{.}\)</span> As a result, a quadratic polynomial <span class="process-math">\(ax^2 +
+bx +c\)</span> is reducible over the real numbers if and only if its discriminant, <span class="process-math">\(b^2 - 4ac\text{,}\)</span> is non-negative.</p>
+<article class="example example-like" id="example-11"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span>
+</h4>
+<p id="p-56">The polynomial <span class="process-math">\(x^2+1\)</span> is irreducible over the real numbers since it has no real roots. However, it is reducible, factored as <span class="process-math">\((x-i)(x+i)\text{,}\)</span> over the complex numbers.</p>
+<p id="p-57">The polynomial <span class="process-math">\(x^2-2 =(x-\sqrt{2})(x+\sqrt{2})\)</span> is reducible over the real numbers but it is irreducible over the rational numbers, since neither of its roots (<span class="process-math">\(\pm \sqrt{2}\)</span>) is rational.</p></article><article class="theorem theorem-like" id="pfd"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.4</span><span class="period">.</span>
+</h4>
+<p id="p-58">Let <span class="process-math">\(P,Q\)</span> be real co-prime polynomials, <span class="process-math">\(Q \neq 0\)</span> monic. The partial fraction decomposition of <span class="process-math">\(P/Q\)</span> is the following expression of <span class="process-math">\(P/Q\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="men-6">
+\begin{equation}
+\frac{P(x)}{Q(x)} = p(x) + \sum_{i=1}^m\sum_{r=1}^{j_i}
+\frac{A_{ir}}{(x-a_i)^r} + \sum_{i=1}^n\sum_{r=1}^{k_i} \frac{B_{ir}x
++C_{ir}}{(x^2+b_ix+c_i)^r}\tag{1.4.1}
+\end{equation}
+</div>
+<p class="continuation">where <span class="process-math">\(p(x)\)</span> is the quotient of <span class="process-math">\(P(x)\)</span> divided by <span class="process-math">\(Q(x)\)</span> and</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+Q(x) = (x-a_i)^{j_1}\cdots(x-a_m)^{j_m}(x^2+b_1x+c_1)^{k_1}\cdots
+(x^2+b_nx+c_n)^{k_n}
+\end{equation*}
+</div>
+<p class="continuation">is the factorization of <span class="process-math">\(Q(x)\)</span> into products of irreducible polynomials. Moreover, the coefficients <span class="process-math">\(A_{ir}, B_{ir}\)</span> and <span class="process-math">\(C_{ir}\)</span> are uniquely undermined by <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\text{.}\)</span></p></article><p id="p-59">The assumptions on <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> in the above theorem can always be achieved: by dividing the leading coefficient of <span class="process-math">\(Q\)</span> into <span class="process-math">\(P\text{,}\)</span> we can assume <span class="process-math">\(Q\)</span> is monic. Also, requiring <span class="process-math">\(Q\)</span> to be monic is just because that makes the statement simpler. Leaving that requirement out makes no essential difference since that only alters the coefficients of the decomposition by a multiplicative constant. By canceling common non-constants factors of <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\text{,}\)</span> we can assume they are co-prime. Doing this potentially extend the domain of the rational function <span class="process-math">\(P/Q\)</span> by finitely many points. With these addition points, if any, taken out, the indefinite integral of <span class="process-math">\(P/Q\)</span> and that for the reduced fraction are the same.</p>
+<p id="p-60">We demonstrate how to compute partial fraction decomposition by a few examples.</p>
+<article class="example example-like" id="pfd1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.5</span><span class="period">.</span>
+</h4>
+<p id="p-61">Let us find the partial fractions decomposition of the rational function <span class="process-math">\(F(x) = \dfrac{x-1}{2x^2 -x -3}\text{.}\)</span> The numerator <span class="process-math">\(P(x):=x-1\)</span> is irreducible and the denominator <span class="process-math">\(Q(x) = 2x^2 -x -3\)</span> is reducible since its discriminant <span class="process-math">\((-1)^2 - 4(2)(-3) = 25 \gt
+0\text{.}\)</span> In fact, <span class="process-math">\(Q(x) = (x+1)(2x-3)\text{.}\)</span> Since <span class="process-math">\(\deg P \lt \deg Q\text{,}\)</span> according to <a href="" class="xref" data-knowl="./knowl/pfd.html" title="Theorem 1.4.4">Theorem 1.4.4</a> the polynomial part of the decomposition is zero. Thus, the partial fraction decomposition of <span class="process-math">\(F(x)\)</span> has the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/pfd.html">
+\begin{equation*}
+\frac{x-1}{2x^2 - x -3} \equiv \frac{A_{11}}{x+1} + \frac{A_{21}}{2x-3}
+\end{equation*}
+</div>
+<p class="continuation">We can find <span class="process-math">\(A_{11}\)</span> and <span class="process-math">\(A_{21}\)</span> by comparing coefficients which transfers the problem into one about solving a system of linear equations (and hence can be handled by linear algebra in general). For simplicity, we relabel the coefficients <span class="process-math">\(A_{11}\)</span> and <span class="process-math">\(A_{21}\)</span> as <span class="process-math">\(A_1\)</span> and <span class="process-math">\(A_2\text{,}\)</span> respectively.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/pfd.html">
+\begin{equation*}
+\frac{A_1}{x+1} + \frac{A_2}{2x-3} \equiv
+\frac{A_1(2x-3)+A_2(x+1)}{(x+1)(2x-3)}.
+\end{equation*}
+</div>
+<p class="continuation">By comparing of the numerators, we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/pfd.html" id="men-7">
+\begin{equation}
+x - 1 \equiv A_1(2x-3) + A_2(x+1) \equiv (2A_1+A_2)x + (-3A_1 + A_2).\tag{1.4.2}
+\end{equation}
+</div>
+<p class="continuation">and so,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/pfd.html" id="men-8">
+\begin{equation}
+2A_1 + A_2 = 1 \quad \text{and} \quad -3A_1 + A_2 = -1.\tag{1.4.3}
+\end{equation}
+</div>
+<p class="continuation">Solving this system of linear equations yields <span class="process-math">\(A_1 = 2/5, A_2 = 1/5\text{,}\)</span> therefore the partial fractions decomposition of <span class="process-math">\(F(x)\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/pfd.html">
+\begin{equation*}
+\frac{2/5}{x+1} + \frac{1/5}{2x-3} = \frac{2}{5(x+1)}+\frac{1}{5(2x-3)}.
+\end{equation*}
+</div></article><article class="example example-like" id="pfd2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.6</span><span class="period">.</span>
+</h4>
+<p id="p-62">Let us compute the partial fraction decomposition of</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+F(x) = \frac{P(x)}{Q(x)} = \frac{2x^5 -x^4 +3x^3 -x +1}{(x-1)(x^2+1)^2}.
+\end{equation*}
+</div>
+<p class="continuation">This time <span class="process-math">\(\deg P\)</span> is not smaller than the degree of <span class="process-math">\(\deg Q\)</span> (both are of degree <span class="process-math">\(5\)</span>). So, the polynomial part of the decomposition is not zero. We can find that out by dividing <span class="process-math">\(P\)</span> by <span class="process-math">\(Q\text{,}\)</span> say using long division. We find that<span class="process-math">\(P(x) = 2Q(x)
++(x^4 -x^3 +4x^2 -3x+3)\text{.}\)</span> Thus,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{P(x)}{Q(x)} = 2 + \frac{x^4 -x^3 +4x^2 -3x+3}{(x-1)(x^2+1)^2}.
+\end{equation*}
+</div>
+<p class="continuation">One checks that <span class="process-math">\(R(x):=x^4 -x^3 + 4x^2-3x+3\)</span> and <span class="process-math">\(Q(x)\)</span> have no irreducible factors in common. By uniqueness of partial fraction, it remains to compute the partial fraction decomposition of <span class="process-math">\(R/Q\)</span> which as the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{x^4 -x^3 +4x^2 -3x+3}{(x-1)(x^2+1)^2} \equiv \frac{A_{11}}{x-1} +
+\frac{B_{11}x + C_{11}}{x^2+1} + \frac{B_{12}x+C_{12}}{(x^2+1)^2}.
+\end{equation*}
+</div>
+<p class="continuation">By clearing the denominators, we arrive at</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-29">
+\begin{align*}
+x^4 -x^3 &amp;+4x^2 -3x + 3 \equiv\\
+&amp;
+A_{11}(x^2+1)^2 + (B_{11}x +
+C_{11})(x-1)(x^2+1) + (B_{12}x+C_{12})(x-1).
+\end{align*}
+</div>
+<p class="continuation">The identity holds for all <span class="process-math">\(x\)</span> so instead of comparing coefficients, one can also derive linear relations among the coefficients by setting <span class="process-math">\(x\)</span> to various values. We aim at getting these relations as simple as possible, for instance, by setting <span class="process-math">\(x = 1\text{,}\)</span> we arrive at</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+1-1+4 -3 + 3 = A_{11}(1^2 + 1)^2.
+\end{equation*}
+</div>
+<p class="continuation">That is <span class="process-math">\(4 =4A_{11}\)</span> and so <span class="process-math">\(A_{11} =1\text{.}\)</span> Next by setting <span class="process-math">\(x=0\text{,}\)</span> equivalently by comparing the constant terms on both sides, we get <span class="process-math">\(3 = A_{11}-C_{11} -C_{12} = 1-C_{11}-C_{12}\text{.}\)</span> So, <span class="process-math">\(C_{11}
++ C_{12} =-2\text{.}\)</span></p>
+<p id="p-63">We can mix these techniques: at this point by comparing the leading coefficients on both sides, we get <span class="process-math">\(1 = A_{11}+B_{11} = 1+B_{11}\text{,}\)</span> so <span class="process-math">\(B_{11}=0\text{.}\)</span> Comparing the coefficients of the <span class="process-math">\(x\)</span> term leads us to</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-30">
+\begin{align*}
+-3 &amp;= -B_{11}+C_{11} -B_{12} +C_{12} \\
+-3
+&amp;= 0 -B_{12} +(-2)
+\end{align*}
+</div>
+<p class="continuation">and so <span class="process-math">\(B_{12}=1\text{.}\)</span> At this juncture, we need one more relation among <span class="process-math">\(C_{11}\)</span> and <span class="process-math">\(C_{12}\text{.}\)</span> We can do that by substituting another value for <span class="process-math">\(x\text{.}\)</span> For example, we get <span class="process-math">\(-3 = 2C_{11}+C_{12}\)</span> by setting <span class="process-math">\(x=-1\)</span> (checks that yourself). And so together with <span class="process-math">\(C_{11}+C_{12} =-2\)</span> we conclude that <span class="process-math">\(C_{11}=-1=C_{12}\text{.}\)</span></p>
+<p id="p-64">Putting all these together, the partial fraction decomposition of <span class="process-math">\(P/Q\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{2x^5-x^4+3x^3-x+1}{(x-1)(x^2+1)^2} = 2+ \frac{1}{x-1} +
+\frac{-1}{x^2+1} + \frac{x-1}{(x^2+1)^2}.
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="pfd-form-ex"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.4.7</span><span class="period">.</span>
+</h4>
+<p id="p-65">First write down the form of the partial fraction decomposition of</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{x^2 -2x-3}{(x-2)(x^2+1)^2(x^2-4)}.
+\end{equation*}
+</div>
+<p class="continuation">Then find the decomposition.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1" id="answer-1"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1"><div class="answer solution-like">
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-66">
+\begin{equation*}
+\frac{A_{11}}{x+2} + \frac{A_{21}}{x-2} + \frac{A_{22}}{(x-2)^2} +
+\frac{B_{11}x +C_{11}}{x^2+1} + \frac{B_{12}x + C_{12}}{(x^2+1)^2}.
+\end{equation*}
+</div>
+<p class="continuation">And the partial fraction decomposition is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{\frac{1}{80}}{x + 2}+\frac{\frac{151}{2000}}{x -
+2}+\frac{-\frac{3}{100}}{(x-2)^2}+\frac{-\frac{11}{125} x
+- \frac{12}{125}}{x^{2} + 1}+\frac{-\frac{8}{25} x -
+\frac{6}{25}}{(x^2+1)^2}
+\end{equation*}
+</div>
+</div></div>
+</div></article><p id="p-67">We refer the reader to this <a class="external" href="https://en.wikipedia.org/wiki/Partial_fraction_decomposition" target="_blank">link</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-1" id="fn-1"><sup> 1 </sup></a> for a sketch of proof of <a href="" class="xref" data-knowl="./knowl/pfd.html" title="Theorem 1.4.4">Theorem 1.4.4</a> and more information on partial fraction decomposition.</p></section><section class="subsection" id="subsection-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.2</span> <span class="title">The reduced cases</span>
+</h3>
+<p id="p-68">With partial fraction decomposition the problem of integrating rational functions over the real numbers reduces to the one of finding integrals of the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{A}{(x-a)^k} dx \ \text{and}\ \int \frac{Bx+C}{(x^2
++bx+c)^k}dx \quad (k \ge 1).
+\end{equation*}
+</div>
+<p class="continuation">The first case is straightforward:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="men-9">
+\begin{equation}
+\int \dfrac{A}{(x-a)^k} dx =
+\begin{cases}
+A\ln|x-a| +C &amp; k =1 \\
+\dfrac{-A}{(k-1)(x-a)^{k-1}}+C &amp; k &gt;1.
+\end{cases}\tag{1.4.4}
+\end{equation}
+</div>
+<p id="p-69">In the second case, <span class="process-math">\(x^2+bx+c\)</span> is irreducible. So by completing square and a linear change in variable, the problem boils down to finding integrals of the following two kinds</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{Bx}{(x^2+a^2)^k}dx, \qquad \int \frac{C}{(x^2+a^2)^k} dx
+\end{equation*}
+</div>
+<p class="continuation">The first kind can be handled by the substitution <span class="process-math">\(u = x^2 + a^2\)</span> and the second kind is handled by the trigonometric substitution <span class="process-math">\(x
+= a\tan\theta\text{.}\)</span> Let us illustrate these strategy by an example.</p>
+<article class="example example-like" id="pf_int_recp_quad"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.8</span><span class="period">.</span>
+</h4>
+<p id="p-70">Let us find the integral <span class="process-math">\(\ds \int \frac{x+8}{x^2+6x+34}
+dx\text{.}\)</span> Completing square we have, <span class="process-math">\(x^2 +6x +34 = (x+3)^2+25\text{.}\)</span> So the substitution <span class="process-math">\(u = x+3\)</span> turns to integral to</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{u+5}{u^2 +25}du = \int \frac{u}{u^2 + 25}du +
+5\int\frac{du}{u^2+25}.
+\end{equation*}
+</div>
+<p class="continuation">Using the substitution <span class="process-math">\(u = 5\tan\theta\text{,}\)</span> we find</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-31">
+\begin{align*}
+5\int\frac{du}{u^2+25} &amp;= \theta +C =
+\arctan\left(\frac{u}{5}\right) +C \\\\
+&amp;= \arctan\left(\frac{x+3}{5}\right)+C.
+\end{align*}
+</div>
+<p class="continuation">Letting <span class="process-math">\(w = u^2+5\text{,}\)</span> we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-32">
+\begin{align*}
+\int \frac{u}{u^2 + 25}du &amp;= \int \frac{dw}{2w} =
+\frac{1}{2}\ln|w| +C\\ \\
+&amp;= \frac{1}{2}\ln(u^2 +5)+C =
+\ln(\sqrt{x^2 + 6x+34}) + C
+\end{align*}
+</div>
+<p class="continuation">Putting these together, we conclude that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int \frac{x+8}{x^2+6x+34}dx = \ln(\sqrt{x^2 + 6x+34}) +
+\arctan\left(\frac{x+3}{5}\right) + C
+\end{equation*}
+</div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-1"><div class="fn"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Partial_fraction_decomposition</code></div></div>
+</div></main>
+</div>
+</body>
+</html>

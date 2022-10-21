@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Calculus Integration by Parts</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus">
+<meta property="book:author" content="Wai Yan Pong">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\ds}{\displaystyle}
+\DeclareMathOperator{\asec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="calbook.html"><span class="title">Calculus:</span> <span class="subtitle">An intuitive approach</span></a></h1>
+<p class="byline">Wai Yan Pong</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "classic",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="tqint.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="tqint.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="trig_int.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="tqint.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="tqint.html" title="Up">Up</a><a class="next-button button toolbar-item" href="trig_int.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="front-colophon.html" data-scroll="front-colophon" class="internal">Colophon</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-I.html" data-scroll="part-I" class="internal"><span class="codenumber">I</span> <span class="title">Calculus I</span></a></li>
+<li class="link part"><a href="part-II.html" data-scroll="part-II" class="internal"><span class="codenumber">II</span> <span class="title">Calculus II</span></a></li>
+<li class="link">
+<a href="tqint.html" data-scroll="tqint" class="internal"><span class="codenumber">1</span> <span class="title">Techniques of Integration</span></a><ul>
+<li><a href="IBP.html" data-scroll="IBP" class="active">Integration by Parts</a></li>
+<li><a href="trig_int.html" data-scroll="trig_int" class="internal">Trigonometric Integrals</a></li>
+<li><a href="trig_subs.html" data-scroll="trig_subs" class="internal">Trigonometric Substitutions</a></li>
+<li><a href="partial_fractions.html" data-scroll="partial_fractions" class="internal">Integrals of Rational Functions</a></li>
+<li><a href="ex_tqint.html" data-scroll="ex_tqint" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ipi.html" data-scroll="ipi" class="internal"><span class="codenumber">2</span> <span class="title">Improper Integrals</span></a><ul>
+<li><a href="ipi_def.html" data-scroll="ipi_def" class="internal">Definitions and Examples</a></li>
+<li><a href="ipi_comp_test.html" data-scroll="ipi_comp_test" class="internal">Comparison Test for integrals</a></li>
+<li><a href="ipi-ex.html" data-scroll="ipi-ex" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="seq_series.html" data-scroll="seq_series" class="internal"><span class="codenumber">3</span> <span class="title">Sequence and Series</span></a><ul>
+<li><a href="sec_sequence.html" data-scroll="sec_sequence" class="internal">Sequences</a></li>
+<li><a href="sec_seq_conv_test.html" data-scroll="sec_seq_conv_test" class="internal">Convergence Tests for Sequences</a></li>
+<li><a href="sec-series.html" data-scroll="sec-series" class="internal">Series</a></li>
+<li><a href="series_conv_test.html" data-scroll="series_conv_test" class="internal">Convergence Tests for Series</a></li>
+<li><a href="power_series.html" data-scroll="power_series" class="internal">Power Series</a></li>
+<li><a href="taylor_series.html" data-scroll="taylor_series" class="internal">Taylor Series</a></li>
+<li><a href="seq_series_ex.html" data-scroll="seq_series_ex" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link"><a href="geoapp.html" data-scroll="geoapp" class="internal"><span class="codenumber">4</span> <span class="title">Geometric Applications</span></a></li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-1.html" data-scroll="appendix-1" class="internal"><span class="codenumber">A</span> <span class="title">Trigonometric Identities</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">B</span> <span class="title">Hints and Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="references-backmatter.html" data-scroll="references-backmatter" class="internal"><span class="title">References</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="back-colophon.html" data-scroll="back-colophon" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="IBP"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">Integration by Parts</span>
+</h2>
+<section class="introduction" id="introduction-2"><p id="p-3">Integration by parts is the anti-derivative version of the product rule.</p></section><p id="p-4">Recall the differential form version of the product rule looks like</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+d(uv) = udv + vdu.  
+\end{equation*}
+</div>
+<p class="continuation">Taking indefinite integral on both sides and rearranging terms yields an equation between two classes of functions:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="eq_IBP-main">
+\begin{equation}
+\int u dv = uv - \int vdu.  \tag{1.1.1}
+\end{equation}
+</div>
+<p class="continuation">It will be helpful for working out <span class="process-math">\(\int udv\)</span> if, say, finding <span class="process-math">\(\int vdu\)</span> is easier.</p>
+<p id="p-5">By making the variable explicit, Equation <a href="" class="xref" data-knowl="./knowl/eq_IBP-main.html" title="Equation 1.1.1">(1.1.1)</a> reads</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_IBP-main.html">
+\begin{equation*}
+\int u(x)v'(x)\ dx = u(x)v(x) - \int v(x)u'(x)\ dx.
+\label{eq_IBP-var}
+\end{equation*}
+</div>
+<p class="continuation">Also, when integration by parts can be applied, i.e. <span class="process-math">\(u(x)\)</span> and <span class="process-math">\(v(x)\)</span> are differentiable functions, it follows from the fundamental theorem of Calculus that the analogous relation holds for definite integrals,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_IBP-main.html">
+\begin{equation*}
+\int_a^b u(x)v'(x)\ dx =
+u(x)v(x)\biggr\rvert_a^b - \int_a^b v(x)u'(x)\ dx.
+\end{equation*}
+</div>
+<article class="example example-like" id="lnx_dx"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
+</h3>
+<p id="p-6">Let us use integration by parts to work out the indefinite integral <span class="process-math">\(\int
+\ln(x)\ dx\text{.}\)</span> Comparing <span class="process-math">\(\ln(x)dx\)</span> with <span class="process-math">\(udv\text{,}\)</span> we can set <span class="process-math">\(u=\ln(x)\)</span> and <span class="process-math">\(dv = dx\text{.}\)</span> Clearly, <span class="process-math">\(v(x)=x\)</span> is a function with <span class="process-math">\(dv=dx\text{.}\)</span> Now according to Equation <a href="" class="xref" data-knowl="./knowl/eq_IBP-main.html" title="Equation 1.1.1">(1.1.1)</a></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_IBP-main.html" id="md-1">
+\begin{align*}
+\int \ln(x) dx &amp; = x\ln(x) - \int x d\ln(x) \\
+&amp; = x\ln(x) - \int x \frac{1}{x} dx \\
+&amp; = x\ln(x)
+- \int dx \\
+&amp; = x\ln(x) - x + C. 
+\end{align*}
+</div></article><article class="exercise exercise-like" id="ex_xcosxdx"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
+</h3>
+<p id="p-7">Find the indefinite integral <span class="process-math">\(\ds \int x\cos(x) dx\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like">Try setting <span class="process-math">\(u=x\)</span> and <span class="process-math">\(dv = \cos(x)dx\text{.}\)</span> To come up with a function <span class="process-math">\(v(x)\)</span> so that <span class="process-math">\(dv = \cos(x)dx\)</span> essentially means finding <span class="process-math">\(\int \cos(x)dx\text{.}\)</span> By recalling <span class="process-math">\(\frac{d}{dx}
+\sin(x) = \cos(x)\text{,}\)</span> we can take <span class="process-math">\(v=\sin(x)\text{.}\)</span> Thus, IBP <a href="" class="xref" data-knowl="./knowl/eq_IBP-main.html" title="Equation 1.1.1">(1.1.1)</a> yields,<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_IBP-main.html" id="md-2">
+\begin{align*}
+\int x\cos(x)dx &amp; = x\sin(x)-\int \sin(x)dx \\
+&amp; =x\sin(x)- (-\cos(x)) + C \\
+&amp; =x\sin(x) +\cos(x) + C. 
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="ex_x2sinxdx"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
+</h3>
+<p id="p-8">Find the indefinite integral <span class="process-math">\(\ds \int x^2\sin(x) dx\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><p id="p-9">Set <span class="process-math">\(u=x^2\)</span> and <span class="process-math">\(dv = \sin(x)dx\text{.}\)</span> Then apply IBP twice.</p></div></div>
+</div></article><article class="example example-like" id="excosx"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h3>
+<p id="p-10">As another example, let us compute <span class="process-math">\(\int e^x \cos(x) dx\text{.}\)</span> Let <span class="process-math">\(u = e^x\)</span> and <span class="process-math">\(dv = \cos(x) dx\text{.}\)</span> Then <span class="process-math">\(du = e^x dx\)</span> and we take <span class="process-math">\(v = \sin(x)\text{.}\)</span> So IBP yields,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int e^x \cos(x)
+dx = e^x\sin(x) - \int e^x \sin(x)dx.
+\end{equation*}
+</div>
+<p class="continuation">At the first glance, we are getting nowhere because computing <span class="process-math">\(\int e^x \sin(x)
+dx\)</span> is as hard as the original problem. However, applying IBP one more time, we get</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int e^x \sin(x)dx = -e^x \cos(x) + \int e^x \cos(x)dx
+\end{equation*}
+</div>
+<p class="continuation">and the original integral, call it <span class="process-math">\(J\text{,}\)</span> reappears. Thus,</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-3">
+\begin{align*}
+J &amp;= e^x \sin x - (-e^x\cos x + J) \\
+2J &amp; = e^x (\sin x + \cos x)+ C \\
+J &amp; = \frac{e^x(\sin x + \cos x)}{2} + C.
+\end{align*}
+</div></article><article class="exercise exercise-like" id="excosx-2nd"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span>
+</h3>
+<p id="p-11">Compute the integral in the example above that is, compute<span class="process-math">\(\int
+e^x\cos(x) dx\)</span> again but this time set <span class="process-math">\(u=\cos(x)\)</span> and <span class="process-math">\(dv
+= e^x dx\text{.}\)</span> (See also <a href="" class="xref" data-knowl="./knowl/ibp-exf.html" title="Exercise 1.5.5">Exercise 1.5.5</a>.)</p></article><p id="p-12">In some situations, IBP leads to relations called <dfn class="terminology">reduction formulas</dfn>. For instance, using IBP we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sin-reduction.html">
+\begin{equation*}
+\int \sin^n(x) dx = -\sin^{n-1}(x)\cos(x) + (n-1)\int \sin^{n-2}(x) dx -
+(n-1)\int \sin^n(x) dx. 
+\end{equation*}
+</div>
+<p class="continuation">Write <span class="process-math">\(I_k\)</span> for the integral <span class="process-math">\(\int \sin^k(x)dx\)</span> then the above relation can be rearranged as</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sin-reduction.html" id="sin-reduction">
+\begin{equation}
+I_n = -\frac{1}{n}\sin^{n-1}(x) \cos(x) +
+\frac{n-1}{n}I_{n-2}.  \tag{1.1.2}
+\end{equation}
+</div>
+<p class="continuation">Each application of <a href="" class="xref" data-knowl="./knowl/sin-reduction.html" title="Equation 1.1.2">(1.1.2)</a> reduces to power of the integrand (in this case, by 2). Eventually, the problem becomes finding either <span class="process-math">\(I_1=\int \sin(x)dx\)</span> (<span class="process-math">\(n\)</span> odd) or <span class="process-math">\(I_0=\int dx\)</span> (<span class="process-math">\(n\)</span> even) which has already been solved.</p></section></div></main>
+</div>
+</body>
+</html>

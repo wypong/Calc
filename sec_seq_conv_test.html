@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Calculus Convergence Tests for Sequences</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Calculus">
+<meta property="book:author" content="Wai Yan Pong">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\ds}{\displaystyle}
+\DeclareMathOperator{\asec}{arcsec}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="calbook.html"><span class="title">Calculus:</span> <span class="subtitle">An intuitive approach</span></a></h1>
+<p class="byline">Wai Yan Pong</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><button id="calculator-toggle" class="toolbar-item button toggle" title="Show calculator" aria-expanded="false" aria-controls="calculator-container">Calc</button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "classic",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_sequence.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="seq_series.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-series.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_sequence.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="seq_series.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-series.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="front-colophon.html" data-scroll="front-colophon" class="internal">Colophon</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-I.html" data-scroll="part-I" class="internal"><span class="codenumber">I</span> <span class="title">Calculus I</span></a></li>
+<li class="link part"><a href="part-II.html" data-scroll="part-II" class="internal"><span class="codenumber">II</span> <span class="title">Calculus II</span></a></li>
+<li class="link">
+<a href="tqint.html" data-scroll="tqint" class="internal"><span class="codenumber">1</span> <span class="title">Techniques of Integration</span></a><ul>
+<li><a href="IBP.html" data-scroll="IBP" class="internal">Integration by Parts</a></li>
+<li><a href="trig_int.html" data-scroll="trig_int" class="internal">Trigonometric Integrals</a></li>
+<li><a href="trig_subs.html" data-scroll="trig_subs" class="internal">Trigonometric Substitutions</a></li>
+<li><a href="partial_fractions.html" data-scroll="partial_fractions" class="internal">Integrals of Rational Functions</a></li>
+<li><a href="ex_tqint.html" data-scroll="ex_tqint" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ipi.html" data-scroll="ipi" class="internal"><span class="codenumber">2</span> <span class="title">Improper Integrals</span></a><ul>
+<li><a href="ipi_def.html" data-scroll="ipi_def" class="internal">Definitions and Examples</a></li>
+<li><a href="ipi_comp_test.html" data-scroll="ipi_comp_test" class="internal">Comparison Test for integrals</a></li>
+<li><a href="ipi-ex.html" data-scroll="ipi-ex" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="seq_series.html" data-scroll="seq_series" class="internal"><span class="codenumber">3</span> <span class="title">Sequence and Series</span></a><ul>
+<li><a href="sec_sequence.html" data-scroll="sec_sequence" class="internal">Sequences</a></li>
+<li><a href="sec_seq_conv_test.html" data-scroll="sec_seq_conv_test" class="active">Convergence Tests for Sequences</a></li>
+<li><a href="sec-series.html" data-scroll="sec-series" class="internal">Series</a></li>
+<li><a href="series_conv_test.html" data-scroll="series_conv_test" class="internal">Convergence Tests for Series</a></li>
+<li><a href="power_series.html" data-scroll="power_series" class="internal">Power Series</a></li>
+<li><a href="taylor_series.html" data-scroll="taylor_series" class="internal">Taylor Series</a></li>
+<li><a href="seq_series_ex.html" data-scroll="seq_series_ex" class="internal">Exercises</a></li>
+</ul>
+</li>
+<li class="link"><a href="geoapp.html" data-scroll="geoapp" class="internal"><span class="codenumber">4</span> <span class="title">Geometric Applications</span></a></li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-1.html" data-scroll="appendix-1" class="internal"><span class="codenumber">A</span> <span class="title">Trigonometric Identities</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">B</span> <span class="title">Hints and Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="references-backmatter.html" data-scroll="references-backmatter" class="internal"><span class="title">References</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="back-colophon.html" data-scroll="back-colophon" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_seq_conv_test"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Convergence Tests for Sequences</span>
+</h2>
+<p id="p-144">As a real-valued function, we understand what means by a sequence of real numbers is increasing (or decreasing). A sequence is <dfn class="terminology">monotone</dfn> if it is either increasing or decreasing.</p>
+<p id="p-145">The following statement is intuitively clear. Its validity relies on the completeness of real numbers. It allows ones to argue the convergence of a sequence without knowing its limit.</p>
+<article class="theorem theorem-like" id="seq_monotonic_conv"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Monotonic Convergence Theorem.</span>
+</h3>
+<p id="p-146">Every increasing (decreasing) sequence that is bounded above (below) converges.</p></article><p id="p-147">As an application of the monotonic convergence theorem, we show that:</p>
+<article class="example example-like" id="ex_limit_e"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
+</h3>
+<p id="p-148"><span class="process-math">\(\displaystyle \lim_{n\to \infty} \left(1 +
+\frac{1}{n}\right)^n\)</span> exists.</p>
+<p id="p-149">By <a href="" class="xref" data-knowl="./knowl/seq_monotonic_conv.html" title="Theorem 3.2.1: Monotonic Convergence Theorem">Theorem 3.2.1</a>, it suffices to argue that <span class="process-math">\(a_n:=(1+1/n)^n\)</span> form a bounded increasing sequence.</p>
+<p id="p-150">It follows from the Binomial Theorem that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+a_n = \sum_{k=0}^n \binom{n}{k}\frac{1}{n^k}.
+\end{equation*}
+</div>
+<p class="continuation">Since for all <span class="process-math">\(k \ge 1\text{,}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\ds \binom{n}{k}\frac{1}{n^k}
+= \frac{n(n-1)\cdots (n-k+1)}{k!}\frac{1}{n^k} \lt \frac{1}{k!}
+\le \frac{1}{2^{k-1}},
+\end{equation*}
+</div>
+<p class="continuation">and so <span class="process-math">\(\ds a_n \le 1 +
+\sum_{k=1}^n \frac{1}{2^{k-1}} = 1 + 2 = 3.\)</span> It remains to show that <span class="process-math">\((a_n)\)</span> is increasing.</p>
+<p id="p-151">For each <span class="process-math">\(0 \le k \le n\text{,}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\binom{n+1}{k}\frac{1}{(n+1)^k} = \frac{1}{k!}\prod_{i=0}^k
+\left(1 - \frac{i}{n+1}\right) \ge \frac{1}{k!}\prod_{i=0}^k
+\left(1 - \frac{i}{n}\right) = \binom{n}{k}\frac{1}{n^k}.
+\end{equation*}
+</div>
+<p class="continuation">So,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+a_n = \sum_{k=0}^n \binom{n}{k}\frac{1}{n^k} \le \sum_{k=0}^n
+\binom{n+1}{k}\frac{1}{(n+1)^k} \lt \sum_{k=0}^{n+1}
+\binom{n+1}{k}\frac{1}{(n+1)^k} = a_{n+1}.
+\end{equation*}
+</div>
+<p class="continuation">This completes the proof.</p>
+<p id="p-152">The limit of <span class="process-math">\((1+1/n)^n\)</span> can be taken as the definition of <span class="process-math">\(e\text{,}\)</span> the base of the natural logarithm.</p></article><p id="p-153">The following proposition is another application of the monotonic convergence theorem.</p>
+<article class="proposition theorem-like" id="power_conv_seq"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
+</h3>
+<p id="p-154">The sequence <span class="process-math">\((c^n)\)</span> converges to <span class="process-math">\(0\)</span> if <span class="process-math">\(0 \lt c \lt
+1\)</span> or unbounded if <span class="process-math">\(c &gt; 1\text{.}\)</span></p></article><article class="hiddenproof" id="proof-4"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-4"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><p id="p-155">Suppose <span class="process-math">\(0 \lt c \lt 1\text{.}\)</span> Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/seq_monotonic_conv.html">
+\begin{equation*}
+c \gt c^2 \gt c^3 \gt
+\cdots
+\end{equation*}
+</div>
+<p class="continuation">is a decreasing sequence. Moreover, the product of two positive numbers is positive, the sequence <span class="process-math">\((c^n)\)</span> is convergent by the <a href="" class="xref" data-knowl="./knowl/seq_monotonic_conv.html" title="Theorem 3.2.1: Monotonic Convergence Theorem">monotonic convergence theorem 3.2.1</a> and let <span class="process-math">\(L\)</span> be its limit. On the one hand, since the sequence</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/seq_monotonic_conv.html">
+\begin{equation*}
+c^2 , c^3 , c^4, \ldots 
+\end{equation*}
+</div>
+<p class="continuation">is just <span class="process-math">\((c^n)\)</span> with its first term dropped, it also converges to <span class="process-math">\(L\text{.}\)</span> On the other hand, this sequence is <span class="process-math">\(c(c^n) =(c^{n+1})\)</span> so it converges to <span class="process-math">\(cL\text{.}\)</span> Thus, by the uniqueness of limits, <span class="process-math">\(cL = c\)</span> and so <span class="process-math">\(L\)</span> must be <span class="process-math">\(0\)</span> since <span class="process-math">\(c \neq 0\text{.}\)</span></p>
+<p id="p-156">If <span class="process-math">\(c \gt 1\text{,}\)</span> say <span class="process-math">\(c = 1+a\)</span> for some <span class="process-math">\(a \gt 0\text{.}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+c^n = (1+a)^n = 1+ na + \text{positive terms} \gt 1+na \to \infty
+\end{equation*}
+</div>
+<p class="continuation">as <span class="process-math">\(n \to \infty\text{.}\)</span></p></article></div>
+<article class="proposition theorem-like" id="seq_ratio_test"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Ratio Test for sequence convergence.</span>
+</h3>
+<p id="p-157">Let <span class="process-math">\((x_n)\)</span> be a sequence of non-zero real numbers and the limit <span class="process-math">\(\lim_n
+|x_{n+1}|/|x_n|\)</span> exists. Then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{cases}
+(x_n)\ \text{is null} &amp; \text{if}\ L \lt 1 \\
+(x_n)\ \text{is unbounded} &amp; \text{if}\ L \gt 1. 
+\end{cases}
+\end{equation*}
+</div></article><p id="p-158">Let <span class="process-math">\((x_n)\)</span> and <span class="process-math">\((y_n)\)</span> be two sequences of positive real numbers.  We write <span class="process-math">\((x_n) \ll (y_n)\)</span> if the sequence of ratios <span class="process-math">\((x_n/y_n)\)</span> is null. Intuitively, <span class="process-math">\((x_n) \ll (y_n)\)</span> means <span class="process-math">\(y_n\)</span> is way bigger than <span class="process-math">\(x_n\)</span> eventually.</p>
+<article class="proposition theorem-like" id="seq_conv_gg"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span>
+</h3>
+<p id="p-159">For any <span class="process-math">\(a \ge 0\)</span> and <span class="process-math">\(b \gt 1\text{,}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+n^a \ll b^n \ll n! \ll n^n
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-5"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-5"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-160">Since <span class="process-math">\(b \gt 1\text{,}\)</span> <span class="process-math">\(\ds \frac{(n+1)^a}{b^{n+1}}\frac{b^n}{n^a} =
+\left(1+\frac{1}{n}\right)^a \frac{1}{b} \to \frac{1}{b}
+\lt 1\text{,}\)</span> so <span class="process-math">\(\ds \frac{n^a}{b^n} \to 0\)</span> by the <a href="" class="xref" data-knowl="./knowl/seq_ratio_test.html" title="Proposition 3.2.4: Ratio Test for sequence convergence">ratio test 3.2.4</a>.</p>
+<p id="p-161">Also, <span class="process-math">\(\ds
+\frac{b^{n+1}}{(n+1)!}\frac{n!}{b^n} = \frac{b}{n+1} \to 0\text{,}\)</span> thus <span class="process-math">\(\ds \frac{b^n}{n!} \to 0\)</span> by the ratio test.</p>
+<p id="p-162">Since</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/seq_squeeze_lemma.html">
+\begin{equation*}
+0 \le \frac{n!}{n^n} = \frac{1}{n}\frac{2}{n} \cdots
+\frac{n}{n} \lt \frac{1}{n},
+\end{equation*}
+</div>
+<p class="continuation">So <span class="process-math">\(n!/n^n \to 0\)</span> by the <a href="" class="xref" data-knowl="./knowl/seq_squeeze_lemma.html" title="Proposition 3.1.14: Squeeze Lemma">Squeeze Lemma 3.1.14</a>.</p></article></div>
+<article class="example example-like" id="n_root_n_ex"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.6</span><span class="period">.</span>
+</h3>
+<p id="p-163"><span class="process-math">\(n^{1/n} \to 1\text{.}\)</span> Since  <span class="process-math">\(1 \le n^{1/n}\text{,}\)</span> it suffices to show that for any <span class="process-math">\(\varepsilon \gt 0, n^{1/n} \lt 1+\varepsilon\)</span> eventually. But this follows immediate from <a href="" class="xref" data-knowl="./knowl/seq_conv_gg.html" title="Proposition 3.2.5">Proposition 3.2.5</a> as <span class="process-math">\(n \ll (1+\varepsilon)^n\text{.}\)</span></p></article><article class="example example-like" id="seq_conv_comp"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.7</span><span class="period">.</span>
+</h3>
+<p id="p-164">Let us compute the limit of the sequence given by <span class="process-math">\(a_n = (e^{2n} + n)^{1/n}\)</span> in another way. Note that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex_seq_root_conv.html">
+\begin{equation*}
+e^{2} \lt a_n=e^2\left(1 +\frac{n}{e^{2n}}\right)^{1/n}
+\lt e^2(2^{1/n})
+\end{equation*}
+</div>
+<p class="continuation">since <span class="process-math">\(n \lt 2^n \lt e^{2n}\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/ex_seq_root_conv.html" title="Exercise 3.7.2">Exercise 3.7.2</a> <span class="process-math">\(2^{1/n} \to 1\)</span> and so <span class="process-math">\(a_n \to e^2\)</span> by the Squeeze Lemma.</p></article></section></div></main>
+</div>
+</body>
+</html>
